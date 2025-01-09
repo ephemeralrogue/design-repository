@@ -1,8 +1,7 @@
 import { createSchema } from 'graphql-yoga';
 import createChildLogger from '../../../lib/logger.js';
 
-const schemaLogger = createChildLogger({
-	service: 'schema',
+const schemaLogger = createChildLogger('schema', {
 	transaction: 'createSchema'
 });
 
