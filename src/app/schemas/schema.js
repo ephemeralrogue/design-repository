@@ -1,10 +1,11 @@
 import { createSchema } from 'graphql-yoga';
-import createChildLogger from '../../../lib/logger.js';
+// import createChildLogger from '../../../lib/logger.js';
 
-const schemaLogger = createChildLogger({
-	service: 'schema',
+/*
+const schemaLogger = createChildLogger('schema', {
 	transaction: 'createSchema'
 });
+*/
 
 const schema = createSchema({
 	typeDefs: /* GraphQL */ `
@@ -23,8 +24,12 @@ const schema = createSchema({
 			tags: () => ['tag1', 'tag2', 'tag3'],
 		}
 	}
-}).catch(err => {
-	schemaLogger.error(err);
 });
+/*
+.catch(err => {
+	// eslint-disable-next-line no-console
+	console.error(err);
+});
+*/
 
 export default schema;
