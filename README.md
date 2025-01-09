@@ -1,6 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Design Repository
 
-## Getting Started
+This README will be better fleshed out in the near future. in the meantime, 
+you can read about this project 
+[here](https://blog.ephemeralrogue.xyz/the-design-repository).
+
+## The Goal
+A Single Page Application (SPA) with client-side rendering of two components:
+1. tag cloud where each tag is a link that will render the 
+2. content component displaying the tagged resources
+
+## TODO
+- add MongoDB connection
+- build GraphQL resolvers to retrieve data
+- write algorithm to display resources by tag
+- make the frontend pretty
+
+## Contributing to Frontend Development
+with regard to the general development of what currently exists here:
+
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 First, run the development server:
 
