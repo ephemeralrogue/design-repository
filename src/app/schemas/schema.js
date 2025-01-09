@@ -24,9 +24,12 @@ const schema = createSchema({
 			tags: () => ['tag1', 'tag2', 'tag3'],
 		}
 	}
-}).catch(err => {
+});
+/*
+.catch(err => {
 	// eslint-disable-next-line no-console
 	console.error(err);
 });
+*/
 
 export default schema;
