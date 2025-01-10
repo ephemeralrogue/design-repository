@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 import pino from 'pino';
-// Force Nextjs to keep these modules around!
-// import 'pino-pretty';
 
 const options = {
 	transport: {

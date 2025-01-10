@@ -1,4 +1,5 @@
 import {
+    Db,
 	MongoClient,
 	MongoClientOptions,
 	ServerApiVersion
@@ -21,23 +22,28 @@ const options: MongoClientOptions = {
 	}
 };
 
-const mongoClient: MongoClient = new MongoClient(mongoDBURIPartial, options);
-
 export default async function connect(database: string) {
 	try {
 
-		mongoLogger.info({
-			transaction: 'MongoDB connect'
-		},`Connecting to ${database} for the first time!`, 'info');
+        const mongoClient: MongoClient = new MongoClient(mongoDBURIPartial, options);
 
 		await mongoClient.connect();
+
+        const db: Db = mongoClient.db(database);
 			
 		await mongoClient.db(database).command({ ping: 1 });
-		mongoLogger.info({
-			transaction: 'MongoDB connect'
-		}, 'Pinged your deployment. You successfully connected to MongoDB!', 'http');
 
-	} finally {
-		await mongoClient.close();
+		mongoLogger.debug({
+			transaction: 'MongoDB connect'
+		}, `Pinged your MongoDB deployment. Successfully connected to ${database}`, 'http');
+
+        return db;
+
+	} catch(error) {
+
+        mongoLogger.error({
+            transaction: 'MongoDB connect'
+        }, 'Failed to connect to MongoDB!', 'http');
+		
 	}
 };

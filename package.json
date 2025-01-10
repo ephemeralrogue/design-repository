@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/LVNACY/design-repository#readme",
   "dependencies": {
+    "@graphql-tools/schema": "^10.0.16",
+    "@next/env": "^15.1.4",
     "graphql": "^16.10.0",
     "graphql-yoga": "^5.10.9",
     "mongodb": "^6.12.0",
