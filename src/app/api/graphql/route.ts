@@ -1,14 +1,6 @@
 // Next.js Custom Route Handler: https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 import { createSchema, createYoga } from 'graphql-yoga';
 // import schema from '../../schemas/schema.js';
-// import createChildLogger from '../../../../lib/logger.js';
-
-/*
-const graphQLLogger = createChildLogger({
-	module: 'graphql',
-	service: 'api-graphql-route'
-});
-*/
  
 interface NextContext {
 	params: Promise<Record<string, string>>
